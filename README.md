@@ -12,12 +12,12 @@
 
 ## Notebook 一覧
 
-| Step | Notebook | 主題 | GRPO の粒度 | Rollout | Colab Link |
-|---|---|---|---|---|---|
-| Step 1 | grpo-step1.ipynb | Native TRL + `environment_factory` + QLoRA | completion / environment reward | TRL に委譲 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step1.ipynb) |
-| Step 2 | grpo-step2.ipynb | Unsloth + DeepAgents + 独自 GRPO | trajectory 単位 | HF/Unsloth、逐次 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step2.ipynb) |
-| Step 3 | grpo-step3.ipynb | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step3.ipynb) |
-| Step 4 | grpo-step4.ipynb | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step4.ipynb) |
+| Step | Notebook | 主題 | GRPO の粒度 | Rollout |
+|---|---|---|---|---|
+| Step 1 | grpo-step1.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step1.ipynb) | Native TRL + `environment_factory` + QLoRA | completion / environment reward | TRL に委譲 |
+| Step 2 | grpo-step2.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step2.ipynb) | Unsloth + DeepAgents + 独自 GRPO | trajectory 単位 | HF/Unsloth、逐次 |
+| Step 3 | grpo-step3.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step3.ipynb) | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 |
+| Step 4 | grpo-step4.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step4.ipynb) | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 |
 
 大きな流れは次のとおりです。
 
