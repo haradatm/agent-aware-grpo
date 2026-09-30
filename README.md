@@ -19,7 +19,7 @@
 | Step 3 | grpo-step3.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step3.ipynb) | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 |
 | Step 4 | grpo-step4.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step4.ipynb) | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 |
 
-このほか、[Step 5](notebooks/grpo-step5.ipynb) では **val split を使った validation** を追加し、[Step 6](notebooks/grpo-step6.ipynb) では **データセットや報酬関数などのタスク依存部分を一箇所に集約**しています。以下では主に **Step 1 から Step 4 まで**の実装の進化を説明します。
+このほか、[Step 5](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step5.ipynb) では **val split を使った validation** を追加し、[Step 6](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step6.ipynb) では **データセットや報酬関数などのタスク依存部分を一箇所に集約**しています。以下では主に **Step 1 から Step 4 まで**の実装の進化を説明します。
 
 大きな流れは次のとおりです。
 
