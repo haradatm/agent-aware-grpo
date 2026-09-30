@@ -6,16 +6,18 @@
 
 本実装でいう **Agent-aware GRPO** は、最終回答だけを1つの completion として扱うのではなく、Agent の実行軌跡(trajectory)を構成する assistant decision turn、tool call、tool observation、最終回答を追跡し、最終的には turn 単位の credit assignment まで行う GRPO を指します。
 
+![Agent-aware GRPO の Step 1 から Step 4 までの進化と技術仕様の比較](assets/Agent-aware_GRPO_Blueprint.png)
+
 ---
 
 ## Notebook 一覧
 
-| Step | Notebook | 主題 | GRPO の粒度 | Rollout |
-|---|---|---|---|---|
-| Step 1 | `grpo-step1.ipynb` | Native TRL + `environment_factory` + QLoRA | completion / environment reward | TRL に委譲 |
-| Step 2 | `grpo-step2.ipynb` | Unsloth + DeepAgents + 独自 GRPO | trajectory 単位 | HF/Unsloth、逐次 |
-| Step 3 | `grpo-step3.ipynb` | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 |
-| Step 4 | `grpo-step4.ipynb` | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 |
+| Step | Notebook | 主題 | GRPO の粒度 | Rollout | Colab Link |
+|---|---|---|---|---|---|
+| Step 1 | grpo-step1.ipynb | Native TRL + `environment_factory` + QLoRA | completion / environment reward | TRL に委譲 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step1.ipynb) |
+| Step 2 | grpo-step2.ipynb | Unsloth + DeepAgents + 独自 GRPO | trajectory 単位 | HF/Unsloth、逐次 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step2.ipynb) |
+| Step 3 | grpo-step3.ipynb | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step3.ipynb) |
+| Step 4 | grpo-step4.ipynb | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step4.ipynb) |
 
 大きな流れは次のとおりです。
 
@@ -1127,7 +1129,7 @@ Step 4 は L4 22GB と A10 24GB を意識した vLLM memory utilization 設定�
 
 この4 Step の主眼は「GRPO の loss formula を実装すること」だけではありません。
 
-Agent RL ではむしろ、
+Agent RL では、
 
 1. **何を policy action とみなすか**
 2. **tool observation を training target からどう除外するか**
