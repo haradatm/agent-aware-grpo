@@ -1,6 +1,6 @@
 # Agent-aware GRPO with DeepAgents
 
-このディレクトリには、**ツール利用を伴うマルチターン Agent に GRPO(Group Relative Policy Optimization)を適用する実装を、Step 1 から Step 4 まで段階的に発展させた Colab Notebook** を収録しています。
+このディレクトリには、**ツール利用を伴うマルチターン Agent に GRPO(Group Relative Policy Optimization)を適用する実装を、Step 1 から Step 4 まで段階的に発展させ、Step 5・Step 6 でさらに改善した Colab Notebook** を収録しています。
 
 検証タスクには DeepWiki MCP を使った GitHub リポジトリ調査を採用し、単純な最終回答の品質だけでなく、**どのツールを、どの順序で、どの程度効率的に使ったか**を学習信号へ取り込むことを目標としています。
 
@@ -19,6 +19,8 @@
 | Step 3 | grpo-step3.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step3.ipynb) | Turn-Level GRPO | assistant turn 単位 | HF/Unsloth、逐次 |
 | Step 4 | grpo-step4.ipynb [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haradatm/agent-aware-grpo/blob/main/notebooks/grpo-step4.ipynb) | vLLM concurrent rollout + 安定化済み Turn-Level GRPO | assistant turn 単位 | vLLM、4 trajectory 並列 |
 
+このほか、[Step 5](notebooks/grpo-step5.ipynb) では **val split を使った validation** を追加し、[Step 6](notebooks/grpo-step6.ipynb) では **データセットや報酬関数などのタスク依存部分を一箇所に集約**しています。以下では主に Step 1 から Step 4 までの実装の進化を説明します。
+
 大きな流れは次のとおりです。
 
 ```text
@@ -35,6 +37,10 @@ Step 4
 vLLM による concurrent rollout、subagent 分離、LoRA 同期、
 gradient finite check まで含めて実運用向けに高速化・安定化
 ```
+
+### 学習結果の例
+
+<div align="left"><img src="assets/Step6_training_result.png" alt="Step 6 の学習結果の例" width="50%"></div>
 
 ---
 
